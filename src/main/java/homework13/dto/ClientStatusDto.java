@@ -5,8 +5,7 @@ import lombok.Data;
 @Data
 public class ClientStatusDto {
 
-    private String name;
-    private String email;
-    private String alias;
+    private int clientId;
+    private int statusId;
 
 }

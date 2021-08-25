@@ -11,8 +11,8 @@ public class ClientService {
 
     private final ClientDao clientDao;
 
-    public ClientService() {
-        clientDao = new ClientDao();
+    public ClientService(ClientDao clientDao) {
+        this.clientDao = clientDao;
     }
 
     public List<ClientDto> findAllCustomers() {
