@@ -1,5 +1,6 @@
 package homework13.controller;
 
+import homework13.dao.StatusDao;
 import homework13.services.StatusService;
 
 import javax.servlet.ServletException;
@@ -9,7 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class StatusServlet extends HttpServlet {
-    private final StatusService statusService = new StatusService();
+    private final StatusDao statusDao = new StatusDao();
+    private final StatusService statusService = new StatusService(statusDao);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

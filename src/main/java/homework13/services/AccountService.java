@@ -11,8 +11,8 @@ public class AccountService {
 
     private final AccountDao accountDao;
 
-    public AccountService() {
-        accountDao = new AccountDao();
+    public AccountService(AccountDao accountDao) {
+        this.accountDao = accountDao;
     }
 
     public List<AccountDto> findAllAccounts() {

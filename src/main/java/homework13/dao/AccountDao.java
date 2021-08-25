@@ -11,12 +11,12 @@ import java.util.List;
 
 public class AccountDao {
 
-    private static final String INSERT = "INSERT INTO account (client_id, number, value) VALUES (?, ?, ?)";
+    public static final String INSERT = "INSERT INTO account (client_id, number, value) VALUES (?, ?, ?)";
     public static final String ACCOUNTS = "SELECT * FROM account";
-    private static final String DELETE_ACCOUNT= "DELETE from account WHERE id=?";
-    private static final String UPDATE = "UPDATE account SET client_id=?, number=?, value=? WHERE id=?";
-    private static final String SEARCH_ACCOUNT_BY_VALUE = "SELECT * from account where value>?";
-    private static final String ACCOUNT_BY_ID = "SELECT * FROM account WHERE id=?";
+    public static final String DELETE_ACCOUNT = "DELETE from account WHERE id=?";
+    public static final String UPDATE = "UPDATE account SET client_id=?, number=?, value=? WHERE id=?";
+    public static final String SEARCH_ACCOUNT_BY_VALUE = "SELECT * from account where value>?";
+    public static final String ACCOUNT_BY_ID = "SELECT * FROM account WHERE id=?";
 
 
     /*Получение списка*/
@@ -92,7 +92,7 @@ public class AccountDao {
 
     /*5. Добавить метод для получения number из Account, где value > переданного значения;*/
 
-    public List<String> searchAccountByValue (Double value) {
+    public List<String> searchAccountByValue(Double value) {
 
         List<String> resultList = new ArrayList<>();
         try (Connection connection = Database.getConnection();
