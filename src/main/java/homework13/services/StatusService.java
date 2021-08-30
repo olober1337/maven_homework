@@ -11,8 +11,8 @@ public class StatusService {
 
     private final StatusDao statusDao;
 
-    public StatusService() {
-        statusDao = new StatusDao();
+    public StatusService(StatusDao statusDao) {
+        this.statusDao = statusDao;
     }
 
     public List<StatusDto> findAllStatuses() {
