@@ -9,7 +9,7 @@ public class UtilClass {
         String name = Thread.currentThread().getName();
         System.out.println(name + COUNTER);
 
-        return COUNTER++;
+        return ++COUNTER;
 
     }
 }
