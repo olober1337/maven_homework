@@ -168,9 +168,8 @@ public class ClientDao {
 
             while (resultSet.next()) {
                 ClientStatus clientStatus = new ClientStatus();
-                clientStatus.setName(resultSet.getString("name"));
-                clientStatus.setEmail(resultSet.getString("email"));
-                clientStatus.setAlias(resultSet.getString("alias"));
+                clientStatus.setClientId(resultSet.getInt("name"));
+                clientStatus.setStatusId(resultSet.getInt("email"));
 
                 resultList.add(clientStatus);
             }
@@ -206,28 +205,4 @@ public class ClientDao {
 
         return null;
     }
-
-    public List<ClientStatus> findAllClientStatuses() {
-        List<ClientStatus> resultList = new ArrayList<>();
-
-        try (Connection connection = Database.getConnection();
-             Statement statement = connection.createStatement()) {
-            ResultSet resultSet = statement.executeQuery(CLIENTS_ID_EQUALS_ACCOUNT_ID);
-
-            while (resultSet.next()) {
-                ClientStatus clientStatus = new ClientStatus();
-                clientStatus.setName(resultSet.getString("name"));
-                clientStatus.setEmail(resultSet.getString("email"));
-                clientStatus.setAlias(resultSet.getString("alias"));
-
-                resultList.add(clientStatus);
-            }
-
-        } catch (SQLException exception) {
-            exception.printStackTrace();
-        }
-
-        return resultList;
-    }
-
 }

@@ -11,5 +11,6 @@ public class Status {
     private String alias;
     private String description;
 
+
 }
 

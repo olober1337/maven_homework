@@ -1,5 +1,6 @@
 package homework13.controller;
 
+import homework13.dao.AccountDao;
 import homework13.services.AccountService;
 
 import javax.servlet.ServletException;
@@ -11,7 +12,8 @@ import java.io.IOException;
 
 @WebServlet("/accounts")
 public class AccountServlet extends HttpServlet {
-    private final AccountService accountService = new AccountService();
+    private final AccountDao accountDao = new AccountDao();
+    private final AccountService accountService = new AccountService(accountDao);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
